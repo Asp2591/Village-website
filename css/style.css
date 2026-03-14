@@ -30,13 +30,24 @@ margin:auto;
 /* HEADER */
 
 .site-header{
-background:#2d6a4f;
-color:white;
+background:rgba(45,106,79,0.95);
+backdrop-filter:blur(6px);
 position:sticky;
 top:0;
 z-index:1000;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+.brand{
+font-size:22px;
+font-weight:700;
+color:white;
+text-decoration:none;
+letter-spacing:0.5px;
 }
 
+.brand span{
+color:#e07a5f;
+}
 .nav-wrap{
 display:flex;
 justify-content:space-between;

@@ -1,3 +1,29 @@
+function downloadPoster() {
+    const canvas = document.getElementById("posterCanvas");
+    const link = document.createElement("a");
+    link.download = "birthday_poster.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+}
+
+function shareWhatsapp() {
+    const canvas = document.getElementById("posterCanvas");
+    // Convert canvas to data URL
+    canvas.toBlob(function(blob) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const dataUrl = reader.result;
+            // WhatsApp Web can't send images via URL directly, so we share a link
+            const encodedMessage = encodeURIComponent(
+                "Check out my birthday contribution poster for village development! 🎉"
+            );
+            const whatsappUrl = `https://wa.me/?text=${encodedMessage}`;
+            window.open(whatsappUrl, "_blank");
+        };
+        reader.readAsDataURL(blob);
+    });
+}
+
 const messages = [
 "Celebrating my birthday by giving back to my village",
 "Proud to support village development",

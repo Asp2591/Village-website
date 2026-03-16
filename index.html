@@ -86,7 +86,23 @@ Support Our Work
 
 </section>
 
+<section class="section section-alt" id="birthday-wall">
 
+<div class="container">
+
+<h2>Birthday Contribution Wall 🎉</h2>
+
+<p style="text-align:center;margin-bottom:40px;">
+Villagers who contributed ₹100 on their birthdays for village development.
+</p>
+
+<div class="birthday-grid" id="birthday-grid">
+
+</div>
+
+</div>
+
+</section>
 
 <section class="section" id="about">
 
@@ -118,7 +134,46 @@ With the support of villagers and donors, we organize initiatives that encourage
 
 </section>
 
+<section class="section" id="birthday-poster">
 
+<div class="container">
+
+<h2>Generate Your Birthday Contribution Poster 🎉</h2>
+
+<p style="text-align:center;margin-bottom:30px;">
+Celebrate your birthday by contributing ₹100 for village development.
+Generate your poster and share it on WhatsApp!
+</p>
+
+<div class="poster-form">
+
+<input type="text" id="poster-name" placeholder="Enter Your Name">
+
+<input type="date" id="poster-date">
+
+<button onclick="generatePoster()" class="btn btn-primary">
+Generate Poster
+</button>
+
+</div>
+
+<div class="poster-preview">
+
+<canvas id="posterCanvas" width="600" height="600"></canvas>
+
+<br>
+
+<button onclick="downloadPoster()" class="btn btn-secondary">
+Download Poster
+</button>
+<button onclick="shareWhatsapp()" class="btn btn-secondary">
+Share on WhatsApp
+</button>
+</div>
+
+</div>
+
+</section>
 
 <section class="section section-alt" id="activities">
 

@@ -147,8 +147,8 @@ color:white;
 }
 
 .btn-secondary{
-border:2px solid white;
-color:white;
+border:2px solid rgb(17, 97, 31);
+color:rgb(28, 24, 24);
 }
 
 /* SECTIONS */
@@ -374,4 +374,83 @@ padding:60px 0;
 grid-template-columns:1fr;
 }
 
+}
+
+/* BIRTHDAY WALL */
+
+.birthday-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:30px;
+}
+
+.birthday-card{
+background:white;
+border-radius:12px;
+padding:25px;
+text-align:center;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.birthday-card:hover{
+transform:translateY(-6px);
+}
+
+.birthday-avatar{
+width:60px;
+height:60px;
+border-radius:50%;
+background:#2d6a4f;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+font-size:20px;
+margin:auto;
+margin-bottom:12px;
+}
+
+.birthday-name{
+font-weight:600;
+font-size:18px;
+}
+
+.birthday-date{
+color:#666;
+font-size:14px;
+margin-top:4px;
+}
+
+.birthday-amount{
+margin-top:10px;
+font-weight:600;
+color:#e07a5f;
+}
+.poster-form{
+display:flex;
+gap:15px;
+justify-content:center;
+margin-bottom:30px;
+flex-wrap:wrap;
+}
+
+.poster-form input{
+padding:10px 15px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+.poster-preview{
+text-align:center;
+}
+
+#posterCanvas{
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+max-width:100%;
+margin-bottom:15px;
 }

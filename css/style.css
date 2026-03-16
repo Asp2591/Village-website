@@ -146,9 +146,9 @@ background:var(--primary);
 color:white;
 }
 
-.btn-secondary{
-border:2px solid rgb(17, 97, 31);
-color:rgb(28, 24, 24);
+.btn-secondary {
+    border: 2px solid rgb(90 187 107);
+    color: rgb(171 169 135);
 }
 
 /* SECTIONS */

@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,700;1,400&family=Lora:ital,wght@0,600;1,400&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
@@ -64,7 +64,7 @@ Maza Gav Maza Abhiman
 Pride of Our Village – Working Together for Development
 </p>
 
-<h1>Maza Gav Maza Abhiman</h1>
+<h1>Maza Gav <br>Maza Abhiman</h1>
 
 <p class="hero-subtitle">
 Building a stronger village through unity, sports, and community development.
@@ -146,15 +146,16 @@ Generate your poster and share it on WhatsApp!
 </p>
 
 <div class="poster-form">
-
-<input type="text" id="poster-name" placeholder="Enter Your Name">
-
-<input type="date" id="poster-date">
-
-<button onclick="generatePoster()" class="btn btn-primary">
-Generate Poster
-</button>
-
+    <input type="text" id="poster-name" placeholder="Enter Your Name">
+    <input type="date" id="poster-date">
+    
+    <input type="text" id="poster-event" placeholder="Event (e.g. Happy Birthday)" value="Happy Birthday">
+    <input type="number" id="poster-amount" placeholder="Amount (e.g. 500)" value="100">
+    <input type="text" id="poster-message" placeholder="Enter custom message" value="Together we build a better village">
+    <button onclick="generatePoster()" class="btn btn-primary">
+        Generate Poster
+    </button>
+</div>
 </div>
 
 <div class="poster-preview">

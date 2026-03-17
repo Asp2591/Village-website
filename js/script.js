@@ -327,8 +327,14 @@ function drawBranding(ctx, date, font) {
  */
 function downloadPoster() {
     const canvas = document.getElementById("posterCanvas");
+    const nameInput = document.getElementById("poster-name").value.trim();
+    
+    // Fallback to 'Contributor' if name is empty
+    const fileName = nameInput ? nameInput.replace(/\s+/g, '_') : "Contributor";
+    
     const link = document.createElement("a");
-    link.download = `Dardewadi_Contribution_${Date.now()}.png`;
+    // Filename will now be "Name_Date.png"
+    link.download = `${fileName}_Dardewadi.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
 }

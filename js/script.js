@@ -278,8 +278,8 @@ function drawBadge(ctx, amt, x, y, color, font, align) {
 
 function drawBranding(ctx, date, font) {
     ctx.textAlign = "center"; 
-    ctx.fillStyle = "rgba(255,255,255,0.3)";
-    ctx.font = `11px ${font.body}`; 
+    ctx.fillStyle = "rgb(247, 243, 243)";
+    ctx.font = `14px ${font.body}`; 
     ctx.fillText("MAZA GAV MAZA ABHIMAN", 300, 545);
     ctx.fillStyle = "white"; 
     ctx.font = `bold 22px ${font.heading}`;

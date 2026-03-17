@@ -1,171 +1,463 @@
-// ------------------------
-// Hamburger Menu Toggle
-// ------------------------
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+// // ------------------------
+// // Configuration & Libraries
+// // ------------------------
+// const menuToggle = document.querySelector(".menu-toggle");
+// const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-});
+// menuToggle.addEventListener("click", () => {
+//     navLinks.classList.toggle("open");
+// });
 
+// // ----------------------------
+// // 1. Configuration & Asset Libraries
+// // ----------------------------
+// const fontLibrary = [
+//     { heading: "'Playfair Display', serif", body: "'Montserrat', sans-serif" },
+//     { heading: "'Merriweather', serif", body: "'Work Sans', sans-serif" },
+//     { heading: "'Lora', serif", body: "'Inter', sans-serif" },
+//     { heading: "'Cinzel', serif", body: "'Lato', sans-serif" },
+//     { heading: "'Libre Baskerville', serif", body: "'Open Sans', sans-serif" }
+// ];
+
+// const premiumColors = [
+//     { bg: "#1a2a6c", accent: "#FAD390" }, // Deep Blue & Gold
+//     { bg: "#2d3436", accent: "#00cec9" }, // Charcoal & Teal
+//     { bg: "#4834d4", accent: "#be2edd" }, // Royal Purple
+//     { bg: "#2c3e50", accent: "#e67e22" }, // Midnight & Orange
+//     { bg: "#5f0f40", accent: "#fb8b24" }, // Wine & Sunset
+//     { bg: "#264653", accent: "#2a9d8f" }, // Ocean & Mint
+//     { bg: "#000000", accent: "#ffd700" }  // Pitch Black & Luxury Gold
+// ];
+
+// // ----------------------------
+// // 2. The 5 Unique Design Architectures
+// // ----------------------------
+// const architecture = {
+//     // 1. MODERN SPLIT: High-contrast sidebar design
+//     modernSplit: (ctx, d, s) => {
+//         const side = Math.random() > 0.5 ? 0 : 400;
+//         ctx.fillStyle = "rgba(255,255,255,0.05)";
+//         ctx.fillRect(side, 0, 200, 600);
+        
+//         const textX = side === 0 ? 240 : 60;
+//         ctx.textAlign = "left";
+//         drawText(ctx, d.event, textX, 150, 300, 20, s.font.body, "white", "5px");
+//         drawText(ctx, d.name, textX, 230, 320, 60, s.font.heading, s.color.accent);
+//         drawWrappedText(ctx, d.message, textX, 300, 300, s.font.body, "left");
+//         drawBadge(ctx, d.amount, textX, 450, s.color.bg, s.font, false);
+//     },
+
+//     // 2. THE BADGE: Central focus inside a geometric shape
+//     theBadge: (ctx, d, s) => {
+//         ctx.save();
+//         ctx.translate(300, 260);
+//         ctx.rotate(Math.PI / 4);
+//         ctx.strokeStyle = s.color.accent;
+//         ctx.lineWidth = 2;
+//         ctx.strokeRect(-180, -180, 360, 360);
+//         ctx.restore();
+
+//         ctx.textAlign = "center";
+//         drawText(ctx, d.event, 300, 140, 400, 22, s.font.body, "white", "3px");
+//         drawText(ctx, d.name, 300, 270, 340, 55, s.font.heading, "white");
+//         drawBadge(ctx, d.amount, 300, 360, s.color.accent, s.font, true);
+//         drawWrappedText(ctx, d.message, 300, 480, 450, s.font.body, "center");
+//     },
+
+//     // 3. FULL TYPOGRAPHY: Focus on large, bold text
+//     boldImpact: (ctx, d, s) => {
+//         ctx.textAlign = "center";
+//         ctx.globalAlpha = 0.1;
+//         drawText(ctx, "DARDEWADI", 300, 320, 580, 100, s.font.heading, "white");
+//         ctx.globalAlpha = 1.0;
+
+//         drawText(ctx, d.event.split('').join(' '), 300, 150, 500, 18, s.font.body, s.color.accent);
+//         drawText(ctx, d.name, 300, 260, 550, 85, s.font.heading, "white");
+//         drawWrappedText(ctx, d.message, 300, 360, 450, s.font.body, "center");
+//         drawBadge(ctx, d.amount, 300, 450, s.color.bg, s.font, true);
+//     },
+
+//     // 4. THE FRAME: Elegant border-based design
+//     elegantFrame: (ctx, d, s) => {
+//         ctx.strokeStyle = s.color.accent;
+//         ctx.lineWidth = 10;
+//         ctx.strokeRect(30, 30, 540, 540);
+        
+//         ctx.textAlign = "center";
+//         ctx.fillStyle = "white";
+//         drawText(ctx, d.event, 300, 100, 400, 25, s.font.heading, "white");
+//         ctx.fillRect(200, 120, 200, 2);
+//         drawText(ctx, d.name, 300, 220, 480, 65, s.font.heading, s.color.accent);
+//         drawWrappedText(ctx, d.message, 300, 320, 400, s.font.body, "center");
+//         drawBadge(ctx, d.amount, 300, 440, s.color.accent, s.font, true);
+//     },
+
+//     // 5. THE SPOTLIGHT: Circular gradient focus
+//     spotlight: (ctx, d, s) => {
+//         let spot = ctx.createRadialGradient(300, 200, 50, 300, 200, 300);
+//         spot.addColorStop(0, "rgba(255,255,255,0.15)");
+//         spot.addColorStop(1, "transparent");
+//         ctx.fillStyle = spot;
+//         ctx.beginPath(); ctx.arc(300, 200, 300, 0, Math.PI*2); ctx.fill();
+
+//         ctx.textAlign = "center";
+//         drawText(ctx, d.name, 300, 210, 500, 75, s.font.heading, "white");
+//         drawText(ctx, d.event, 300, 120, 400, 20, s.font.body, s.color.accent, "8px");
+//         drawWrappedText(ctx, d.message, 300, 330, 400, s.font.body, "center");
+//         drawBadge(ctx, d.amount, 300, 440, s.color.bg, s.font, true);
+//     }
+// };
+
+// // ----------------------------
+// // 3. Core Generation Engine
+// // ----------------------------
+// function generatePoster() {
+//     const canvas = document.getElementById("posterCanvas");
+//     const ctx = canvas.getContext("2d");
+    
+//     const data = {
+//         name: document.getElementById("poster-name").value.trim().toUpperCase(),
+//         event: (document.getElementById("poster-event").value.trim() || "Happy Birthday").toUpperCase(),
+//         amount: document.getElementById("poster-amount").value || "100",
+//         message: document.getElementById("poster-message").value.trim() || "Together we build a better village",
+//         date: document.getElementById("poster-date").value
+//     };
+
+//     if (!data.name) return alert("Please enter a name");
+
+//     // Randomize Environment
+//     const s = {
+//         font: fontLibrary[Math.floor(Math.random() * fontLibrary.length)],
+//         color: premiumColors[Math.floor(Math.random() * premiumColors.length)],
+//         archKey: Object.keys(architecture)[Math.floor(Math.random() * Object.keys(architecture).length)]
+//     };
+
+//     // Draw Background
+//     drawBaseBackground(ctx, s.color.bg);
+
+//     // Execute Architecture
+//     architecture[s.archKey](ctx, data, s);
+
+//     // Footer Branding
+//     drawBranding(ctx, data.date, s.font);
+// }
+
+// // ----------------------------
+// // 4. Component Helpers
+// // ----------------------------
+// function drawBaseBackground(ctx, color) {
+//     let g = ctx.createLinearGradient(0, 0, 600, 600);
+//     g.addColorStop(0, color);
+//     g.addColorStop(1, "#050505");
+//     ctx.fillStyle = g;
+//     ctx.fillRect(0, 0, 600, 600);
+    
+//     // Random "Texture" (dots or lines)
+//     ctx.globalAlpha = 0.05;
+//     ctx.fillStyle = "white";
+//     for(let i=0; i<100; i++) {
+//         ctx.beginPath();
+//         ctx.arc(Math.random()*600, Math.random()*600, 1, 0, Math.PI*2);
+//         ctx.fill();
+//     }
+//     ctx.globalAlpha = 1.0;
+// }
+
+// function drawText(ctx, text, x, y, maxW, size, font, color, spacing = "0px") {
+//     ctx.save();
+//     ctx.fillStyle = color;
+//     ctx.letterSpacing = spacing;
+//     let currentSize = size;
+//     ctx.font = `${currentSize}px ${font}`;
+//     while (ctx.measureText(text).width > maxW && currentSize > 10) {
+//         currentSize--;
+//         ctx.font = `${currentSize}px ${font}`;
+//     }
+//     ctx.fillText(text, x, y);
+//     ctx.restore();
+// }
+
+// function drawWrappedText(ctx, text, x, y, maxW, font, align) {
+//     ctx.font = `300 19px ${font}`;
+//     ctx.fillStyle = "rgba(255,255,255,0.8)";
+//     ctx.textAlign = align;
+//     const words = text.split(' ');
+//     let line = '', testY = y;
+//     for(let n=0; n<words.length; n++) {
+//         let testLine = line + words[n] + ' ';
+//         if (ctx.measureText(testLine).width > maxW && n > 0) {
+//             ctx.fillText(line, x, testY);
+//             line = words[n] + ' ';
+//             testY += 26;
+//         } else { line = testLine; }
+//     }
+//     ctx.fillText(line, x, testY);
+// }
+
+// function drawBadge(ctx, amt, x, y, color, font, centered) {
+//     const txt = `₹${amt} CONTRIBUTION`;
+//     ctx.font = `bold 15px ${font.body}`;
+//     const w = ctx.measureText(txt).width + 30;
+//     const rx = centered ? x - (w/2) : x;
+//     ctx.fillStyle = color;
+//     ctx.beginPath();
+//     ctx.roundRect(rx, y-20, w, 40, 5);
+//     ctx.fill();
+//     ctx.fillStyle = "white";
+//     ctx.textAlign = "center";
+//     ctx.fillText(txt, rx + (w/2), y+5);
+// }
+
+// function drawBranding(ctx, date, font) {
+//     ctx.textAlign = "center";
+//     ctx.fillStyle = "rgba(255,255,255,0.3)";
+//     ctx.font = `10px ${font.body}`;
+//     ctx.fillText("MAZA GAV MAZA ABHIMAN", 300, 530);
+//     ctx.fillStyle = "white";
+//     ctx.font = `bold 20px ${font.heading}`;
+//     ctx.fillText("DARDEWADI", 300, 555);
+//     if(date) {
+//         ctx.font = "11px sans-serif";
+//         ctx.fillText(date, 300, 580);
+//     }
+// }
+
+// // ------------------------
+// // Utilities
+// // ------------------------
+// function downloadPoster() {
+//     const canvas = document.getElementById("posterCanvas");
+//     const link = document.createElement("a");
+//     link.download = `Dardewadi_Poster_${Date.now()}.png`;
+//     link.href = canvas.toDataURL("image/png");
+//     link.click();
+// }
+
+// function shareWhatsapp() {
+//     const msg = encodeURIComponent("I'm proud to contribute to Dardewadi village development! 🚩");
+//     window.open(`https://wa.me/?text=${msg}`, "_blank");
+// }
+
+// ----------------------------
+// 1. Asset Libraries
+// ----------------------------
 const fontLibrary = [
     { heading: "'Playfair Display', serif", body: "'Montserrat', sans-serif" },
     { heading: "'Merriweather', serif", body: "'Work Sans', sans-serif" },
     { heading: "'Lora', serif", body: "'Inter', sans-serif" },
-    { heading: "'Libre Baskerville', serif", body: "'Open Sans', sans-serif" },
-    { heading: "'Cinzel', serif", body: "'Lato', sans-serif" }
+    { heading: "'Cinzel', serif", body: "'Lato', sans-serif" },
+    { heading: "'Libre Baskerville', serif", body: "'Open Sans', sans-serif" }
 ];
 
-const premiumColors = [
-    "#1a2a6c", "#2d3436", "#4834d4", "#2c3e50",
-    "#6d597a", "#355070", "#b56576", "#5f0f40",
-    "#264653", "#2a9d8f", "#7678ed", "#4361ee"
+const premiumPalettes = [
+    { bg: "#1a2a6c", accent: "#FAD390" }, // Royal Blue & Gold
+    { bg: "#2d3436", accent: "#00cec9" }, // Charcoal & Teal
+    { bg: "#4834d4", accent: "#be2edd" }, // Purple & Violet
+    { bg: "#2c3e50", accent: "#e67e22" }, // Navy & Orange
+    { bg: "#5f0f40", accent: "#fb8b24" }, // Wine & Sunset
+    { bg: "#264653", accent: "#2a9d8f" }, // Deep Green & Mint
+    { bg: "#000000", accent: "#ffd700" }, // Pitch Black & Luxury Gold
+    { bg: "#212121", accent: "#8e44ad" }, // Anthracite & Amethyst
+    { bg: "#273c75", accent: "#fbc531" }, // Marine & Yellow
+    { bg: "#2f3640", accent: "#4cd137" }, // Slate & Neon Green
+    { bg: "#0c2461", accent: "#6a89cc" }, // Midnight & Sky
+    { bg: "#b71540", accent: "#ffc048" }  // Crimson & Amber
 ];
 
-function drawScalableText(ctx, text, x, y, maxWidth, baseSize, fontFace) {
-    let fontSize = baseSize;
-    ctx.font = `${fontSize}px ${fontFace}`;
-    while (ctx.measureText(text).width > maxWidth && fontSize > 12) {
-        fontSize--;
-        ctx.font = `${fontSize}px ${fontFace}`;
+// ----------------------------
+// 2. The 8 Layout Architectures
+// ----------------------------
+const layouts = {
+    // 1. The Modern Sidebar
+    sidebar: (ctx, d, s) => {
+        ctx.fillStyle = "rgba(255,255,255,0.05)";
+        ctx.fillRect(0, 0, 220, 600);
+        ctx.textAlign = "left";
+        drawText(ctx, d.event, 260, 150, 300, 20, s.font.body, "white", "5px");
+        drawText(ctx, d.name, 260, 230, 320, 65, s.font.heading, s.accent);
+        drawWrappedText(ctx, d.message, 260, 300, 300, s.font.body, "left");
+        drawBadge(ctx, d.amount, 260, 460, s.accent, s.font);
+    },
+    // 2. The Central Diamond
+    diamond: (ctx, d, s) => {
+        ctx.save(); ctx.translate(300, 260); ctx.rotate(Math.PI / 4);
+        ctx.strokeStyle = s.accent; ctx.lineWidth = 2;
+        ctx.strokeRect(-190, -190, 380, 380); ctx.restore();
+        ctx.textAlign = "center";
+        drawText(ctx, d.event, 300, 140, 400, 22, s.font.body, "white", "3px");
+        drawText(ctx, d.name, 300, 270, 360, 55, s.font.heading, "white");
+        drawBadge(ctx, d.amount, 300, 360, s.accent, s.font);
+        drawWrappedText(ctx, d.message, 300, 480, 450, s.font.body, "center");
+    },
+    // 3. Typography Focus
+    bigType: (ctx, d, s) => {
+        ctx.textAlign = "center";
+        ctx.globalAlpha = 0.1;
+        drawText(ctx, "CONTRIBUTOR", 300, 320, 580, 95, s.font.heading, "white");
+        ctx.globalAlpha = 1.0;
+        drawText(ctx, d.name, 300, 260, 550, 85, s.font.heading, "white");
+        drawText(ctx, d.event, 300, 180, 400, 25, s.font.body, s.accent);
+        drawBadge(ctx, d.amount, 300, 460, s.accent, s.font);
+    },
+    // 4. Double Frame
+    framed: (ctx, d, s) => {
+        ctx.strokeStyle = s.accent; ctx.lineWidth = 2;
+        ctx.strokeRect(45, 45, 510, 510); ctx.strokeRect(55, 55, 490, 490);
+        ctx.textAlign = "center";
+        drawText(ctx, d.event, 300, 120, 400, 25, s.font.heading, "white");
+        drawText(ctx, d.name, 300, 230, 480, 70, s.font.heading, s.accent);
+        drawWrappedText(ctx, d.message, 300, 330, 400, s.font.body, "center");
+        drawBadge(ctx, d.amount, 300, 450, s.accent, s.font);
+    },
+    // 5. Minimalist Left
+    minimal: (ctx, d, s) => {
+        ctx.textAlign = "left";
+        drawText(ctx, "COMMUNITY PRIDE", 60, 100, 400, 15, s.font.body, s.accent, "6px");
+        drawText(ctx, d.name, 60, 190, 500, 85, s.font.heading, "white");
+        drawText(ctx, d.event, 60, 240, 400, 30, s.font.body, "rgba(255,255,255,0.6)");
+        drawWrappedText(ctx, d.message, 60, 310, 480, s.font.body, "left");
+        drawText(ctx, "Contribution: ₹" + d.amount, 60, 470, 400, 24, s.font.heading, s.accent);
+    },
+    // 6. The Ribbon Bar
+    ribbon: (ctx, d, s) => {
+        ctx.fillStyle = s.accent; ctx.fillRect(0, 190, 600, 90);
+        ctx.textAlign = "center";
+        drawText(ctx, d.name, 300, 240, 550, 65, s.font.heading, "#1a1a1a");
+        drawText(ctx, d.event, 300, 150, 400, 25, s.font.body, "white", "4px");
+        drawWrappedText(ctx, d.message, 300, 350, 450, s.font.body, "center");
+        drawBadge(ctx, d.amount, 300, 460, s.accent, s.font);
+    },
+    // 7. Diagonal Split
+    diagonal: (ctx, d, s) => {
+        ctx.fillStyle = "rgba(255,255,255,0.03)";
+        ctx.beginPath(); ctx.moveTo(600,0); ctx.lineTo(600,600); ctx.lineTo(0,600); ctx.fill();
+        ctx.textAlign = "right";
+        drawText(ctx, d.name, 540, 230, 500, 75, s.font.heading, s.accent);
+        drawText(ctx, d.event, 540, 150, 400, 20, s.font.body, "white", "5px");
+        drawWrappedText(ctx, d.message, 540, 310, 420, s.font.body, "right");
+        drawBadge(ctx, d.amount, 420, 470, s.accent, s.font);
+    },
+    // 8. Circular Focus
+    circle: (ctx, d, s) => {
+        ctx.beginPath(); ctx.arc(300, 240, 180, 0, Math.PI*2);
+        ctx.strokeStyle = "rgba(255,255,255,0.1)"; ctx.lineWidth = 15; ctx.stroke();
+        ctx.textAlign = "center";
+        drawText(ctx, d.name, 300, 250, 340, 55, s.font.heading, "white");
+        drawText(ctx, d.event, 300, 140, 400, 22, s.font.body, s.accent, "8px");
+        drawWrappedText(ctx, d.message, 300, 480, 450, s.font.body, "center");
+        drawBadge(ctx, d.amount, 300, 340, s.accent, s.font);
     }
-    ctx.fillText(text, x, y);
-}
+};
 
-function fillRoundRect(ctx, x, y, width, height, radius) {
-    ctx.beginPath();
-    ctx.moveTo(x + radius, y);
-    ctx.lineTo(x + width - radius, y);
-    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-    ctx.lineTo(x + width, y + height - radius);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-    ctx.lineTo(x + radius, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-    ctx.lineTo(x, y + radius);
-    ctx.quadraticCurveTo(x, y, x + radius, y);
-    ctx.closePath();
-    ctx.fill();
-}
-
-// ------------------------
-// Generate Poster
-// ------------------------
+// ----------------------------
+// 3. Main Generation Function
+// ----------------------------
 function generatePoster() {
-    const name = document.getElementById("poster-name").value.trim();
-    const date = document.getElementById("poster-date").value;
-    const eventText = document.getElementById("poster-event").value.trim() || "Happy Birthday";
-    const amount = document.getElementById("poster-amount").value || "100";
-    const message = document.getElementById("poster-message").value.trim() || "Together we build a better village";
-
-    if (!name) { alert("Please enter your name"); return; }
-
     const canvas = document.getElementById("posterCanvas");
     const ctx = canvas.getContext("2d");
-    canvas.width = 600;
-    canvas.height = 600;
     
-    // Pick random styles
-    const stylePair = fontLibrary[Math.floor(Math.random() * fontLibrary.length)];
-    const centerX = canvas.width / 2;
-    const baseColor = premiumColors[Math.floor(Math.random() * premiumColors.length)];
+    const data = {
+        name: document.getElementById("poster-name").value.trim().toUpperCase(),
+        event: (document.getElementById("poster-event").value.trim() || "Happy Birthday").toUpperCase(),
+        amount: document.getElementById("poster-amount").value || "100",
+        message: document.getElementById("poster-message").value.trim() || "Together we build a better village",
+        date: document.getElementById("poster-date").value
+    };
 
-    // 1. Background
-    ctx.save();
-    let bgGrad = ctx.createLinearGradient(0, 0, 600, 600);
-    bgGrad.addColorStop(0, baseColor);
-    bgGrad.addColorStop(1, "#0a0a0a");
-    ctx.fillStyle = bgGrad;
-    ctx.fillRect(0, 0, 600, 600);
-    ctx.restore();
+    if (!data.name) return alert("Please enter your name");
 
-    // 2. Glass Panel
-    ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
-    fillRoundRect(ctx, 40, 40, 520, 520, 25);
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
+    // Randomize Style Parameters
+    const s = {
+        font: fontLibrary[Math.floor(Math.random() * fontLibrary.length)],
+        palette: premiumPalettes[Math.floor(Math.random() * premiumPalettes.length)],
+        archKey: Object.keys(layouts)[Math.floor(Math.random() * Object.keys(layouts).length)]
+    };
+    s.bg = s.palette.bg;
+    s.accent = s.palette.accent;
 
-    // 3. Text Setup
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
-    ctx.shadowBlur = 10;
-
-    // Header
-    ctx.fillStyle = "white";
-    drawScalableText(ctx, eventText.toUpperCase(), centerX, 110, 380, 26, stylePair.heading);
-
-    // Name
-    ctx.fillStyle = "#E5D1B0";
-    drawScalableText(ctx, name, centerX, 190, 460, 58, stylePair.heading);
-
-    // Message
-    ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
-    ctx.font = `italic 22px ${stylePair.body}`;
-    const wrappedMsg = message.match(/.{1,38}(\s|$)/g);
-    wrappedMsg.forEach((line, i) => {
-        ctx.fillText(line.trim(), centerX, 290 + (i * 32));
-    });
-
-    // 4. Contribution Badge
-    ctx.shadowBlur = 0;
-    const badgeTxt = `₹${amount} CONTRIBUTION`;
-    ctx.font = `bold 18px ${stylePair.body}`;
-    const bWidth = ctx.measureText(badgeTxt).width + 46;
-    ctx.save();
-    ctx.translate(centerX, 415);
-    ctx.fillStyle = "white";
-    fillRoundRect(ctx, -(bWidth / 2), -22, bWidth, 44, 12);
-    ctx.fillStyle = "#1a1a1a";
-    ctx.fillText(badgeTxt, 0, 0);
-    ctx.restore();
-
-    // 5. CONSTANT FOOTER
-    ctx.fillStyle = "white";
-    drawScalableText(ctx, "MAZA GAV MAZA ABHIMAN", centerX, 485, 440, 22, stylePair.heading);
-
-    ctx.font = `600 17px ${stylePair.body}`;
-    ctx.letterSpacing = "5px";
-    ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-    ctx.fillText("DARDEWADI", centerX, 515);
-    ctx.letterSpacing = "0px";
-
-    if (date) {
-        ctx.font = `14px ${stylePair.body}`;
-        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-        ctx.fillText(date, centerX, 545);
-    }
-
-    drawDecorations(ctx);
+    // 1. Draw Background & Texture
+    drawBackground(ctx, s.bg);
+    
+    // 2. Apply Chosen Layout Architecture
+    layouts[s.archKey](ctx, data, s);
+    
+    // 3. Persistent Footer Branding
+    drawBranding(ctx, data.date, s.font);
 }
 
-function drawDecorations(ctx) {
-    const icons = ["🌸", "🌹", "🌺", "🎂", "🎁", "🎉", "✨", "🎈"];
-    ctx.save();
-    for (let i = 0; i < 35; i++) {
-        const size = 18 + Math.random() * 12;
-        ctx.font = `${size}px serif`;
-        ctx.globalAlpha = 0.5;
-        let x, y;
-        const side = Math.floor(Math.random() * 4);
-        if (side === 0) { x = Math.random() * 600; y = Math.random() * 80; }
-        else if (side === 1) { x = Math.random() * 600; y = 520 + Math.random() * 80; }
-        else if (side === 2) { x = Math.random() * 80; y = Math.random() * 600; }
-        else { x = 520 + Math.random() * 80; y = Math.random() * 600; }
-        ctx.fillText(icons[Math.floor(Math.random() * icons.length)], x, y);
+// ----------------------------
+// 4. Component Drawing Helpers
+// ----------------------------
+function drawBackground(ctx, color) {
+    let g = ctx.createRadialGradient(300, 300, 50, 300, 300, 600);
+    g.addColorStop(0, color); g.addColorStop(1, "#050505");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, 600, 600);
+    
+    // Random Overlay Texture
+    ctx.globalAlpha = 0.05; ctx.strokeStyle = "white";
+    const type = Math.random();
+    if(type > 0.6) { // Grid
+        for(let i=0; i<600; i+=50) { ctx.strokeRect(i, 0, 1, 600); ctx.strokeRect(0, i, 600, 1); }
+    } else { // Particles
+        for(let i=0; i<40; i++) { ctx.beginPath(); ctx.arc(Math.random()*600, Math.random()*600, 1.5, 0, Math.PI*2); ctx.fill(); }
     }
-    ctx.restore();
+    ctx.globalAlpha = 1.0;
 }
 
+function drawText(ctx, text, x, y, maxW, size, font, color, spacing = "0px") {
+    ctx.save(); ctx.fillStyle = color; ctx.letterSpacing = spacing;
+    let currentSize = size; ctx.font = `${currentSize}px ${font}`;
+    while (ctx.measureText(text).width > maxW && currentSize > 10) {
+        currentSize--; ctx.font = `${currentSize}px ${font}`;
+    }
+    ctx.fillText(text, x, y); ctx.restore();
+}
+
+function drawWrappedText(ctx, text, x, y, maxW, font, align) {
+    ctx.font = `300 20px ${font}`; ctx.fillStyle = "rgba(255,255,255,0.8)"; ctx.textAlign = align;
+    const words = text.split(' '); let line = '', testY = y;
+    for(let n=0; n<words.length; n++) {
+        let testLine = line + words[n] + ' ';
+        if (ctx.measureText(testLine).width > maxW && n > 0) {
+            ctx.fillText(line, x, testY); line = words[n] + ' '; testY += 28;
+        } else { line = testLine; }
+    }
+    ctx.fillText(line, x, testY);
+}
+
+function drawBadge(ctx, amt, x, y, color, font) {
+    const txt = `₹${amt} CONTRIBUTION`;
+    ctx.font = `bold 15px ${font.body}`;
+    const w = ctx.measureText(txt).width + 40;
+    const align = ctx.textAlign;
+    let rx = (align === "center") ? x - (w/2) : (align === "right") ? x - w : x;
+    
+    ctx.fillStyle = color; ctx.beginPath(); ctx.roundRect(rx, y-22, w, 44, 8); ctx.fill();
+    ctx.fillStyle = "#1a1a1a"; ctx.textAlign = "center";
+    ctx.fillText(txt, rx + (w/2), y+5);
+}
+
+function drawBranding(ctx, date, font) {
+    ctx.textAlign = "center"; ctx.fillStyle = "rgba(255,255,255,0.3)";
+    ctx.font = `11px ${font.body}`; ctx.fillText("MAZA GAV MAZA ABHIMAN", 300, 545);
+    ctx.fillStyle = "white"; ctx.font = `bold 22px ${font.heading}`;
+    ctx.fillText("DARDEWADI", 300, 570);
+    if(date) { ctx.font = "11px sans-serif"; ctx.fillText(date, 300, 590); }
+}
+
+// ----------------------------
+// 5. Action Handlers
+// ----------------------------
 function downloadPoster() {
     const canvas = document.getElementById("posterCanvas");
     const link = document.createElement("a");
-    link.download = `Birthday_Poster_${Date.now()}.png`;
+    link.download = `Dardewadi_Contribution_${Date.now()}.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
 }
 
 function shareWhatsapp() {
-    const msg = encodeURIComponent("I contributed to Dardewadi village development on my birthday! 🎉");
+    const name = document.getElementById("poster-name").value || "A contributor";
+    const msg = encodeURIComponent(`Check out ${name}'s contribution to Dardewadi village development! 🎉 🚩`);
     window.open(`https://wa.me/?text=${msg}`, "_blank");
 }

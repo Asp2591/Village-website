@@ -21,6 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
         // Close menu when clicking anywhere else
         document.addEventListener("click", () => navLinks.classList.remove("open"));
     }
+    const dateInput = document.getElementById("poster-date");
+    if (dateInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        
+        // Input type="date" requires yyyy-mm-dd format to display
+        dateInput.value = `${yyyy}-${mm}-${dd}`;
+    }
 });
 
 /**
@@ -140,12 +150,30 @@ function generatePoster() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     
+    // --- Date Formatting Logic ---
+    const rawDate = document.getElementById("poster-date").value;
+    let formattedDate = "";
+    
+    if (rawDate) {
+        // Splitting yyyy-mm-dd to rearrange
+        const parts = rawDate.split("-");
+        if(parts.length === 3) {
+            formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`; // dd-mm-yyyy
+        }
+    } else {
+        // Fallback to current date if input is cleared
+        const now = new Date();
+        const d = String(now.getDate()).padStart(2, '0');
+        const m = String(now.getMonth() + 1).padStart(2, '0');
+        formattedDate = `${d}-${m}-${now.getFullYear()}`;
+    }
+
     const data = {
         name: document.getElementById("poster-name").value.trim().toUpperCase(),
         event: (document.getElementById("poster-event").value.trim() || "Happy Birthday").toUpperCase(),
         amount: document.getElementById("poster-amount").value || "100",
         message: document.getElementById("poster-message").value.trim() || "Together we build a better village",
-        date: document.getElementById("poster-date").value
+        date: formattedDate 
     };
 
     if (!data.name) { alert("Please enter your name"); return; }
@@ -159,14 +187,14 @@ function generatePoster() {
     s.accent = s.palette.accent;
 
     ctx.clearRect(0, 0, 600, 600);
+    
+    // Draw Background (With the flowers/cakes icons)
     drawBackground(ctx, s.bg);
     
-    // Execute Layout
     try {
         layouts[s.archKey](ctx, data, s);
     } catch (e) {
-        console.error("Layout Error:", e);
-        layouts['bigType'](ctx, data, s); // Fallback
+        layouts['bigType'](ctx, data, s);
     }
     
     drawBranding(ctx, data.date, s.font);
@@ -280,15 +308,18 @@ function drawBranding(ctx, date, font) {
     ctx.textAlign = "center"; 
     ctx.fillStyle = "rgb(247, 243, 243)";
     ctx.font = `14px ${font.body}`; 
-    ctx.fillText("MAZA GAV MAZA ABHIMAN", 300, 545);
+    ctx.fillText("माझा गाव, माझा अभिमान", 300, 525);
     ctx.fillStyle = "white"; 
     ctx.font = `bold 22px ${font.heading}`;
-    ctx.fillText("DARDEWADI", 300, 570);
+    ctx.fillText("दर्डेवाडी", 300, 550);
     if(date) { 
-        ctx.font = "11px sans-serif"; 
-        ctx.fillText(date, 300, 590); 
+        ctx.fillStyle = "rgb(232, 247, 15)";
+        ctx.font = "13px sans-serif"; 
+        ctx.fillText(date, 300, 585); 
     }
+    ctx.restore();
 }
+
 /**
  * --------------------------------------------------------
  * 6. ACTION HANDLERS
@@ -302,8 +333,3 @@ function downloadPoster() {
     link.click();
 }
 
-function shareWhatsapp() {
-    const name = document.getElementById("poster-name").value || "A contributor";
-    const msg = encodeURIComponent(`Check out ${name}'s contribution to Dardewadi village development! 🎉 🚩`);
-    window.open(`https://wa.me/?text=${msg}`, "_blank");
-}

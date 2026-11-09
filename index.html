@@ -1,361 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Maza Gav Maza Abhiman</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,700;1,400&family=Lora:ital,wght@0,600;1,400&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2b">
+  <meta name="description"
+    content="माझा गाव, माझा अभिमान — दर्डेवाडीच्या एकजुटीसाठी, विकासासाठी आणि उज्ज्वल भविष्यासाठी एकत्र येऊया.">
+  <title>माझा गाव, माझा अभिमान | दर्डेवाडी</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Khand:wght@400;500;600;700&family=Mukta:wght@400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-<header class="site-header">
-
-<div class="container nav-wrap">
-
-<a href="#home" class="brand">
-Maza Gav Maza Abhiman
-</a>
-
-<button class="menu-toggle">
-<i class="ph ph-list"></i>
-</button>
-
-<nav class="nav-links">
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#activities">Our Work</a>
-
-<a href="#events">Events</a>
-
-<a href="#gallery">Gallery</a>
-
-<a href="#impact">Impact</a>
-
-<a href="#volunteers">Volunteers</a>
-
-<a href="#donate" class="donate-btn">Donate</a>
-
-<a href="#contact">Contact</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-
-<section class="hero" id="home">
-
-<div class="container hero-content">
-
-<p class="hero-tagline">
-Pride of Our Village – Working Together for Development
-</p>
-
-<h1>Maza Gav <br>Maza Abhiman</h1>
-
-<p class="hero-subtitle">
-Building a stronger village through unity, sports, and community development.
-</p>
-
-<div class="hero-actions">
-
-<a href="#about" class="btn btn-primary">
-Learn More
-</a>
-
-<a href="#donate" class="btn btn-secondary">
-Support Our Work
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section section-alt" id="birthday-wall">
-
-<div class="container">
-
-<h2>Birthday Contribution Wall 🎉</h2>
-
-<p style="text-align:center;margin-bottom:40px;">
-Villagers who contributed ₹100 on their birthdays for village development.
-</p>
-
-<div class="birthday-grid" id="birthday-grid">
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="about">
-
-<div class="container about-grid">
-
-<div>
-
-<p class="section-label">
-ABOUT THE FOUNDATION
-</p>
-
-<h2>About the Foundation</h2>
-
-<p>
-Maza Gav Maza Abhiman is a community-driven foundation dedicated to improving our village. 
-The foundation focuses on youth development, sports activities, and village improvement projects. 
-With the support of villagers and donors, we organize initiatives that encourage unity, health, and progress in our community.
-</p>
-
-</div>
-
-<div class="about-image">
-
-<img src="https://images.unsplash.com/photo-1741526998115-53463b93cb4a?auto=format&fit=crop&w=900&q=80">
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="birthday-poster">
-
-<div class="container">
-
-<h2>Generate Your Birthday Contribution Poster 🎉</h2>
-
-<p style="text-align:center;margin-bottom:30px;">
-Celebrate your birthday by contributing ₹100 for village development.
-Generate your poster and share it on WhatsApp!
-</p>
-
-<div class="poster-form">
-    <input type="text" id="poster-name" placeholder="Enter Your Name">
-    <input type="date" id="poster-date">
-    
-    <input type="text" id="poster-event" placeholder="Event (e.g. Happy Birthday)" value="Happy Birthday">
-    <input type="number" id="poster-amount" placeholder="Amount (e.g. 500)" value="100">
-    <input type="text" id="poster-message" placeholder="Enter custom message" value="Together we build a better village">
-    <button onclick="generatePoster()" class="btn btn-primary">
-        Generate Poster
-    </button>
-</div>
-</div>
-
-<div class="poster-preview">
-
-<canvas id="posterCanvas" width="600" height="600"></canvas>
-
-<br>
-
-<button onclick="downloadPoster()" class="btn btn-secondary">
-Download Poster
-</button>
-<!-- <button onclick="shareWhatsapp()" class="btn btn-secondary">
-Share on WhatsApp
-</button> -->
-</div>
-
-</div>
-
-</section>
-
-<section class="section section-alt" id="activities">
-
-<div class="container">
-
-<h2>What We Do</h2>
-
-<div class="activities-grid">
-
-<div class="activity-card">
-<i class="ph ph-soccer-ball"></i>
-<h3>Sports Development</h3>
-<p>Encouraging village youth to participate in sports like cricket, kabaddi, and athletics.</p>
-</div>
-
-<div class="activity-card">
-<i class="ph ph-plant"></i>
-<h3>Village Development</h3>
-<p>Cleanliness drives and community improvement activities.</p>
-</div>
-
-<div class="activity-card">
-<i class="ph ph-users-three"></i>
-<h3>Youth Empowerment</h3>
-<p>Leadership and teamwork programs for young villagers.</p>
-</div>
-
-<div class="activity-card">
-<i class="ph ph-hand-heart"></i>
-<h3>Community Programs</h3>
-<p>Social and cultural programs to bring the village together.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="section" id="events">
-
-<div class="container">
-
-<h2>Village Events</h2>
-
-<p>
-We organize sports tournaments, kabaddi competitions, cultural events, and social activities to strengthen village unity.
-</p>
-
-</div>
-
-</section>
-
-
-
-<section class="section section-alt" id="gallery">
-
-<div class="container">
-
-<h2>Gallery</h2>
-
-<div class="gallery-grid">
-
-<img src="https://images.unsplash.com/photo-1688287749470-567a3025c66b?w=800">
-
-<img src="https://images.unsplash.com/photo-1741526998115-53463b93cb4a?w=800">
-
-<img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800">
-
-<img src="https://images.unsplash.com/photo-1617268507504-58e6ce4f5f76?w=800">
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="section impact" id="impact">
-
-<div class="container">
-
-<h2>Our Impact</h2>
-
-<div class="impact-grid">
-
-<div class="impact-card">
-<h3>100+</h3>
-<p>Youth Participating in Sports</p>
-</div>
-
-<div class="impact-card">
-<h3>50+</h3>
-<p>Village Volunteers</p>
-</div>
-
-<div class="impact-card">
-<h3>10+</h3>
-<p>Events Organized</p>
-</div>
-
-<div class="impact-card">
-<h3>5+</h3>
-<p>Years of Service</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="section" id="volunteers">
-
-<div class="container">
-
-<h2>Become a Volunteer</h2>
-
-<p>
-Join our mission to improve our village and inspire the youth through sports and community activities.
-</p>
-
-</div>
-
-</section>
-
-
-
-<section class="section section-alt" id="donate">
-
-<div class="container">
-
-<h2>Support Our Mission</h2>
-
-<p>
-Your contribution helps us organize sports events, youth programs, and village development initiatives.
-</p>
-
-<p><strong>UPI:</strong> mazagav@upi</p>
-
-</div>
-
-</section>
-
-
-
-<section class="section" id="contact">
-
-<div class="container">
-
-<h2>Contact Us</h2>
-
-<p>Village: दर्डेवाडी</p>
-<p>Phone: +91 83908 05474</p>
-<p>Email: connect@mazagavabhiman.org</p>
-
-</div>
-
-</section>
-
-
-
-<footer class="site-footer">
-
-<div class="container">
-
-<p>
-© 2026 माझा गाव, माझा अभिमान,दर्डेवाडी
-</p>
-
-</div>
-
-</footer>
-
-
-<script src="js/script.js"></script>
-
+  <div class="announcement"><span class="announcement-dot"></span> गावाच्या प्रगतीसाठी एक पाऊल — आजच सहभागी व्हा!</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="माझा गाव माझा अभिमान मुख्यपृष्ठ">
+      <span class="brand-symbol">मा<span>ग्रा</span></span>
+      <span class="brand-copy"><strong>माझा गाव, माझा अभिमान</strong><small>एकजूट • विकास • अभिमान</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="मेनू उघडा" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">मुख्यपृष्ठ</a><a href="#about">आमच्याबद्दल</a><a href="#work">आमचे कार्य</a>
+      <a href="#events">उपक्रम</a><a href="#gallery">गॅलरी</a><a href="#impact">प्रभाव</a>
+      <a href="#volunteer">स्वयंसेवक</a><a href="#birthday-wall">वाढदिवस योगदान</a>
+      <a class="nav-donate" href="#donate">योगदान द्या ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-pattern"></div>
+      <div class="hero-content">
+        <span class="eyebrow light">दर्डेवाडी • आपलं गाव, आपली जबाबदारी</span>
+        <h1>गाव आपलं आहे,<br><em>विकासही आपलाच!</em></h1>
+        <p>एकजुटीतून सक्षम गाव, खेळातून घडणारी तरुणाई आणि प्रत्येकाच्या सहभागातून उज्ज्वल उद्या.</p>
+        <div class="hero-actions"><a class="btn btn-saffron" href="#birthday-wall">वाढदिवस योगदान द्या
+            <span>↗</span></a><a class="btn btn-outline-light" href="#about">आमच्याबद्दल जाणून घ्या</a></div>
+        <div class="hero-note"><span class="note-icon">✦</span><span>छोटे योगदान, मोठा बदल.<br><b>आपल्या गावासाठी एकत्र
+              येऊया.</b></span></div>
+      </div>
+      <div class="hero-art" aria-label="गाव आणि सहकार्याचे प्रतीकात्मक चित्र">
+        <div class="art-sun"></div>
+        <div class="art-hill hill-one"></div>
+        <div class="art-hill hill-two"></div>
+        <div class="art-village"><span>🏡</span><span>🌳</span><span>🏡</span><span>🌾</span></div>
+        <div class="art-ribbon">माझा गाव • माझा अभिमान</div>
+      </div>
+      <a class="scroll-cue" href="#birthday-wall">खाली स्क्रोल करा <span>↓</span></a>
+    </section>
+
+    <section class="birthday-intro section-pad" id="birthday-wall">
+      <div class="section-heading centered">
+        <span class="eyebrow">एक खास उपक्रम</span>
+        <h2>वाढदिवसाचा आनंद,<br><em>गावाच्या विकासासाठी!</em></h2>
+        <p>आपल्या वाढदिवशी ₹१०० चे स्वेच्छेने योगदान देऊन गावाच्या प्रगतीत सहभागी व्हा. प्रत्येक छोटा हातभार महत्त्वाचा
+          आहे.</p>
+      </div>
+      <div class="birthday-banner">
+        <div class="birthday-icon">🎂</div>
+        <div><small>आपला वाढदिवस • आपल्या गावासाठी</small><strong>₹१००</strong><span>स्वेच्छेचे योगदान • मोठ्या बदलाची
+            सुरुवात</span></div>
+        <a class="btn btn-dark" href="#donate">माझे योगदान द्या ↗</a>
+      </div>
+      <div class="wall-heading">
+        <div><span class="eyebrow">आपली एकजूट</span>
+          <h3>वाढदिवस योगदान भिंत</h3>
+        </div><span class="wall-caption">योगदान देणाऱ्या प्रत्येकाचे मनापासून आभार ❤️</span>
+      </div>
+      <div class="birthday-grid" id="birthdayGrid">
+        <div class="empty-wall"><span>🌱</span><strong>पहिलं नाव तुमचं असू शकतं!</strong>
+          <p>योगदान दिल्यानंतर आपले नाव या भिंतीवर जोडण्यासाठी समितीशी संपर्क साधा.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-pad" id="about">
+      <div class="about-visual">
+        <div class="about-stamp">आपलं गाव<br><b>आपला अभिमान</b></div>
+        <div class="about-photo" role="img" aria-label="गावातील हिरवाई आणि निसर्ग"></div>
+        <div class="about-stat"><strong>एकत्र</strong><span>आलो तर शक्य आहे!</span></div>
+      </div>
+      <div class="about-copy"><span class="eyebrow">आमची ओळख</span>
+        <h2>गावासाठी काहीतरी<br><em>करण्याच्या भावनेतून.</em></h2>
+        <p>‘माझा गाव, माझा अभिमान’ हा दर्डेवाडीच्या सर्वांगीण विकासासाठी एकत्र आलेला सामूहिक प्रयत्न आहे. गावातील युवक,
+          ग्रामस्थ आणि हितचिंतक यांच्या सहभागातून सकारात्मक बदल घडवणे हे आमचे ध्येय आहे.</p>
+        <p>खेळ, शिक्षण, सामाजिक उपक्रम आणि गावाच्या मूलभूत विकासासाठी प्रत्येकाला सोबत घेऊन काम करण्याचा आमचा प्रयत्न
+          आहे.</p>
+        <a class="text-link" href="#work">आमचे उपक्रम पहा <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="work-section section-pad" id="work">
+      <div class="section-heading"><span class="eyebrow">आम्ही काय करतो?</span>
+        <h2>आजची कृती,<br><em>उद्याचा अभिमान.</em></h2>
+        <p>गावाच्या गरजा आणि तरुणाईची ऊर्जा यांची सांगड घालून उपयुक्त उपक्रम राबवणे.</p>
+      </div>
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="work-icon">🏆</div><span class="card-number">०१</span>
+          <h3>क्रीडा विकास</h3>
+          <p>खेळांना प्रोत्साहन, स्पर्धांचे आयोजन आणि स्थानिक खेळाडूंना व्यासपीठ.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-icon">🌱</div><span class="card-number">०२</span>
+          <h3>ग्रामविकास</h3>
+          <p>स्वच्छता, पर्यावरण, सार्वजनिक सुविधा आणि गावाच्या विकासासाठी सामूहिक प्रयत्न.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-icon">🚀</div><span class="card-number">०३</span>
+          <h3>युवक सक्षमीकरण</h3>
+          <p>युवकांचे कौशल्य, नेतृत्व, करिअर मार्गदर्शन आणि सामाजिक सहभाग वाढवणे.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-icon">🤝</div><span class="card-number">०४</span>
+          <h3>सामुदायिक उपक्रम</h3>
+          <p>सण, सांस्कृतिक कार्यक्रम, सामाजिक मदत आणि गावकऱ्यांना जोडणारे उपक्रम.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="events-section section-pad" id="events">
+      <div class="section-heading centered"><span class="eyebrow">एकत्र येण्याचे क्षण</span>
+        <h2>आपले उपक्रम <em>आणि कार्यक्रम</em></h2>
+        <p>गावाच्या सहभागातून घडणाऱ्या आठवणी आणि सकारात्मक बदल.</p>
+      </div>
+      <div class="event-grid">
+        <article class="event-card event-feature">
+          <div class="event-art event-sports">🏏<span>खेळ • संघभावना • जिद्द</span></div>
+          <div class="event-info"><small>क्रीडा उपक्रम</small>
+            <h3>खेळातून एकजूट</h3>
+            <p>स्थानिक खेळाडूंना प्रोत्साहन आणि युवकांना एकत्र आणणारे क्रीडा उपक्रम.</p>
+          </div>
+        </article>
+        <article class="event-card">
+          <div class="event-art event-green">🌳<span>स्वच्छ • सुंदर • हरित</span></div>
+          <div class="event-info"><small>ग्रामविकास</small>
+            <h3>आपलं गाव, स्वच्छ गाव</h3>
+            <p>स्वच्छता आणि पर्यावरण संवर्धनासाठी सामूहिक सहभाग.</p>
+          </div>
+        </article>
+        <article class="event-card">
+          <div class="event-art event-culture">🎉<span>परंपरा • संस्कृती • आनंद</span></div>
+          <div class="event-info"><small>सामुदायिक कार्यक्रम</small>
+            <h3>एकत्र साजरे करूया</h3>
+            <p>गावातील नाती अधिक घट्ट करणारे सांस्कृतिक आणि सामाजिक कार्यक्रम.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery-section section-pad" id="gallery">
+      <div class="section-heading"><span class="eyebrow">आपल्या आठवणी</span>
+        <h2>गावाचे क्षण,<br><em>आपला अभिमान.</em></h2>
+        <p>येथे आपल्या प्रत्यक्ष कार्यक्रमांचे फोटो जोडा आणि गावाच्या प्रवासाची नोंद ठेवा.</p>
+      </div>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85"
+          alt="एकत्र आलेला समुदाय" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=85"
+          alt="सामुदायिक कार्यक्रम" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1461896836934-FFE607ba8211?auto=format&fit=crop&w=900&q=85"
+          alt="क्रीडा आणि युवक" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=85"
+          alt="निसर्गरम्य परिसर" loading="lazy">
+      </div>
+      <p class="gallery-note">टीप: या जागी दर्डेवाडीतील स्वतःचे कार्यक्रम / गावाचे फोटो वापरणे अधिक योग्य ठरेल.</p>
+    </section>
+
+    <section class="impact-section section-pad" id="impact">
+      <div class="impact-heading"><span class="eyebrow light">आपल्या सहभागाची ताकद</span>
+        <h2>एकत्र आलो,<br><em>तर बदल घडतो.</em></h2>
+        <p>खालील आकडे वेबसाइटसाठी सुरुवातीचे placeholder आहेत. प्रकाशित करण्यापूर्वी प्रत्यक्ष आकडे अपडेट करा.</p>
+      </div>
+      <div class="impact-grid">
+        <div><strong>१००+</strong><span>सहभागी युवक</span></div>
+        <div><strong>५०+</strong><span>स्वयंसेवक</span></div>
+        <div><strong>१०+</strong><span>उपक्रम</span></div>
+        <div><strong>५+</strong><span>वर्षांचा प्रवास</span></div>
+      </div>
+    </section>
+
+    <section class="volunteer-section section-pad" id="volunteer">
+      <div><span class="eyebrow">तुमची साथ महत्त्वाची</span>
+        <h2>बदलाचा भाग <em>व्हा!</em></h2>
+        <p>तुमच्याकडे वेळ, कौशल्य, कल्पना किंवा मदत करण्याची इच्छा असेल — चला, गावासाठी एकत्र काम करूया.</p>
+      </div>
+      <a class="btn btn-dark"
+        href="https://wa.me/918390805474?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%BE%E0%A4%B0%2C%20%E0%A4%AE%E0%A4%B2%E0%A4%BE%20%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%AF%E0%A4%82%E0%A4%B8%E0%A5%87%E0%A4%B5%E0%A4%95%20%E0%A4%AE%E0%A5%8D%E0%A4%B9%E0%A4%A3%E0%A5%82%E0%A4%A8%20%E0%A4%B8%E0%A4%B9%E0%A4%AD%E0%A4%BE%E0%A4%97%E0%A5%80%20%E0%A4%B5%E0%A5%8D%E0%A4%B9%E0%A4%BE%E0%A4%AF%E0%A4%9A%E0%A5%87%20%E0%A4%86%E0%A4%B9%E0%A5%87."
+        target="_blank" rel="noopener">स्वयंसेवक म्हणून संपर्क करा ↗</a>
+    </section>
+
+    <section class="poster-section section-pad" id="birthday-poster">
+      <div class="section-heading centered"><span class="eyebrow">तुमच्या खास दिवसासाठी</span>
+        <h2>वाढदिवस योगदान <em>पोस्टर स्टुडिओ</em></h2>
+        <p>नाव, फोटो आणि संदेश टाका. पारंपरिक मराठी किंवा आधुनिक प्रीमियम डिझाइन निवडा आणि पोस्टर PNG स्वरूपात डाउनलोड
+          करा.</p>
+      </div>
+      <div class="poster-app">
+        <aside class="poster-controls">
+          <div class="poster-step"><span>०१</span>
+            <div>
+              <h3>डिझाइन निवडा</h3>
+              <p>पारंपरिक आणि आधुनिक शैली</p>
+            </div>
+          </div>
+          <div class="template-categories"><button class="category-btn active" data-category="all">सर्व</button><button
+              class="category-btn" data-category="traditional">पारंपरिक</button><button class="category-btn"
+              data-category="modern">आधुनिक</button></div>
+          <div class="template-grid" id="templateGrid" aria-label="पोस्टर डिझाइन्स"></div>
+          <div class="poster-step"><span>०२</span>
+            <div>
+              <h3>तुमची माहिती</h3>
+              <p>तुमच्या पद्धतीने पोस्टर तयार करा</p>
+            </div>
+          </div>
+          <label class="field-label" for="posterName">वाढदिवस असलेल्या व्यक्तीचे नाव</label><input id="posterName"
+            class="form-control" maxlength="32" value="आपले नाव" placeholder="नाव लिहा">
+          <div class="form-row">
+            <div><label class="field-label" for="posterDate">वाढदिवसाची तारीख</label><input id="posterDate"
+                class="form-control" type="date"></div>
+            <div><label class="field-label" for="posterAmount">योगदान (₹)</label><input id="posterAmount"
+                class="form-control" type="number" min="0" max="999999" value="100"></div>
+          </div>
+          <label class="field-label" for="posterEvent">पोस्टरवरील शीर्षक</label><input id="posterEvent"
+            class="form-control" maxlength="45" value="वाढदिवसाच्या हार्दिक शुभेच्छा">
+          <label class="field-label" for="posterMessage">तुमचा संदेश</label><textarea id="posterMessage"
+            class="form-control" rows="3"
+            maxlength="150">माझ्या आनंदाच्या दिवशी आपल्या गावाच्या विकासासाठी माझा छोटासा हातभार.</textarea>
+          <label class="field-label" for="posterPhoto">फोटो जोडा (ऐच्छिक)</label><input id="posterPhoto"
+            class="file-control" type="file" accept="image/*">
+          <div class="form-row">
+            <div><label class="field-label" for="posterFont">मराठी फॉन्ट</label><select id="posterFont"
+                class="form-control">
+                <option value="Mukta">मुक्ता</option>
+                <option value="Tiro Devanagari Marathi">टिरो मराठी</option>
+                <option value="Khand">खंड</option>
+              </select></div>
+            <div><label class="field-label" for="posterAccent">रंग</label><input id="posterAccent" class="color-control"
+                type="color" value="#d79b35"></div>
+          </div>
+          <label class="check-control"><input id="posterDecor" type="checkbox" checked> सजावटीचे घटक दाखवा</label>
+          <div class="poster-buttons"><button class="btn btn-dark" id="downloadPoster">पोस्टर डाउनलोड करा
+              ↓</button><button class="btn btn-whatsapp" id="sharePoster">WhatsApp वर शेअर करा ↗</button><button
+              class="btn btn-soft" id="resetPoster">रीसेट करा ↺</button></div>
+          <p class="privacy-note">🔒 तुमचा फोटो आणि माहिती फक्त तुमच्या ब्राउझरमध्ये वापरली जाते. कोणत्याही सर्व्हरवर
+            अपलोड होत नाही.</p>
+        </aside>
+        <div class="poster-preview-area">
+          <div class="preview-topline"><span><i></i> थेट पूर्वदृश्य</span><span>१०८० × १०८० PX</span></div>
+          <div class="poster-canvas-wrap"><canvas id="posterCanvas" width="1080" height="1080"
+              aria-label="वाढदिवस योगदान पोस्टर"></canvas></div>
+          <p class="preview-hint">निवडलेले डिझाइन आणि माहिती लगेच येथे दिसेल.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="donate-section section-pad" id="donate">
+      <div class="donate-copy"><span class="eyebrow light">तुमचा हातभार • गावाचा आधार</span>
+        <h2>आजचे योगदान,<br><em>उद्याचा विकास.</em></h2>
+        <p>आपल्या क्षमतेनुसार स्वेच्छेने योगदान द्या. मिळालेल्या निधीचा वापर कोणत्या उपक्रमांसाठी होतो याची पारदर्शक
+          माहिती ग्रामस्थांसमोर ठेवणे महत्त्वाचे आहे.</p>
+        <div class="upi-box"><small>UPI ID</small><strong id="upiId">mazagav@upi</strong><button id="copyUpi"
+            aria-label="UPI ID कॉपी करा">कॉपी करा</button></div><a class="btn btn-saffron" id="upiPay"
+          href="upi://pay?pa=mazagav%40upi&pn=Maza%20Gav%20Maza%20Abhiman&cu=INR&tn=Village%20Development%20Contribution">UPI
+          अ‍ॅप उघडा ↗</a><small class="payment-note">पेमेंट करण्यापूर्वी UPI ID आणि प्राप्तकर्त्याचे नाव तपासा. ही
+          वेबसाइट पेमेंटची पुष्टी किंवा पावती तयार करत नाही.</small>
+      </div>
+      <div class="donate-art">
+        <div class="donate-circle">₹<strong>१००</strong><span>छोटा हातभार</span></div>
+        <div class="donate-leaf leaf-a">✦</div>
+        <div class="donate-leaf leaf-b">✦</div>
+        <p>एकत्रित प्रयत्नांतून<br><b>मोठा बदल घडवूया.</b></p>
+      </div>
+    </section>
+
+    <section class="contact-section section-pad" id="contact">
+      <div class="section-heading"><span class="eyebrow">चला, बोलूया!</span>
+        <h2>तुमच्या सूचना,<br><em>आमच्यासाठी महत्त्वाच्या.</em></h2>
+        <p>उपक्रम, योगदान किंवा स्वयंसेवक म्हणून सहभागी होण्यासाठी संपर्क साधा.</p>
+      </div>
+      <div class="contact-details"><a href="https://wa.me/918390805474" target="_blank" rel="noopener"><span>☎</span>
+          <div><small>फोन / WhatsApp</small><strong>+91 83908 05474</strong></div>
+        </a><a href="mailto:connect@mazagavabhiman.org"><span>✉</span>
+          <div><small>ईमेल</small><strong>connect@mazagavabhiman.org</strong></div>
+        </a>
+        <div><span>⌖</span>
+          <div><small>गाव</small><strong>दर्डेवाडी, महाराष्ट्र</strong></div>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/amhi_dardewadikar?xtok=bHAzenh6dmE0M2Zn" target="_blank" rel="noopener noreferrer"
+        class="instagram-link">
+        <span>📸</span>
+        आमचे Instagram पेज फॉलो करा
+        ↗
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="brand-symbol">मा<span>ग्रा</span></span>
+      <div><strong>माझा गाव, माझा अभिमान</strong><small>एकजूट • विकास • अभिमान</small></div>
+    </div>
+    <p>गाव आपलं आहे — जबाबदारीही आपलीच!</p><small>© <span id="year"></span> माझा गाव, माझा अभिमान • दर्डेवाडी. सर्व हक्क
+      राखीव.</small>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
